@@ -1,11 +1,11 @@
 <mat-card class="card">
+  <img [src]="job.logo" alt="">
   <mat-card-header class="header">
-    <!-- <img mat-card-image [src]="job.logo" alt=""> -->
     <div class="position">
       <mat-card-subtitle>{{job.company}}</mat-card-subtitle>
       <mat-chip-list>
-        <mat-chip class="darckCyan">NEW!</mat-chip>
-        <mat-chip class="darkGray">FEATURED</mat-chip>
+        <mat-chip class="darckCyan" *ngIf="job.new">NEW!</mat-chip>
+        <mat-chip class="darkGray" *ngIf="job.featured">FEATURED</mat-chip>
       </mat-chip-list>
     </div>
     <div>
@@ -19,14 +19,16 @@
       <span>{{job.location}}</span>
     </div>
   </mat-card-header>
-  <hr>
-  <mat-chip-list>
-    <span class="languages">{{job.role}}</span>
-    <span class="languages">{{job.position}}</span>
-    <span
-    class="languages"
-    *ngFor="let language of job.languages">
-    {{language}}
-    </span>
-  </mat-chip-list>
+  <div class="selectables">
+    <mat-chip-list>
+      <hr *ngIf="mobile">
+      <span class="languages">{{job.role}}</span>
+      <span class="languages">{{job.level}}</span>
+      <span
+      class="languages"
+      *ngFor="let language of job.languages">
+      {{language}}
+      </span>
+    </mat-chip-list>
+  </div>
 </mat-card>

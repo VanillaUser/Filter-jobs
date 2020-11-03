@@ -1,6 +1,7 @@
 .card{
   margin: 0 0 3rem 0;
-  width: 400px;
+  width: 300px;
+  max-height: 270px;
   display: flex;
   flex-flow: column wrap;
   -webkit-box-shadow: 0px 0px 168px 3px rgba(0,0,0,0.04);
@@ -13,6 +14,8 @@ hr{
 }
 
 img{
+  position: absolute;
+  top: -25px;
   width: 50px;
   height: 50px;
 }
@@ -20,6 +23,7 @@ img{
 .header{
   display: flex;
   flex-direction: column;
+  margin-top: 15px;
 }
 .position{
   display: flex;
@@ -60,4 +64,27 @@ img{
   bottom: 2px;
   content: ' \25CF';
   font-size: 10px;
+}
+
+@media screen and (min-width: 769px) {
+  .card{
+    width: 90vw;
+    flex-direction: row;
+    align-items: center;
+  }
+  img{
+    position: static;
+    width: 75px;
+    height: 75px;
+    flex-grow: 0;
+    margin-right: 15px;
+  }
+  .position{
+    flex-grow: 0;
+  }
+  .selectables{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
 }
