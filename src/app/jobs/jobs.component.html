@@ -22,13 +22,18 @@
   <div class="selectables">
     <mat-chip-list>
       <hr *ngIf="mobile">
-      <span class="languages">{{job.role}}</span>
-      <span class="languages">{{job.level}}</span>
-      <span
+      <mat-chip class="languages">{{job.role}}</mat-chip>
+      <mat-chip class="languages">{{job.level}}</mat-chip>
+      <mat-chip
       class="languages"
       *ngFor="let language of job.languages">
       {{language}}
-      </span>
+      </mat-chip>
+      <mat-chip
+      class="languages"
+      *ngFor="let tools of job.tools">
+      {{tools}}
+      </mat-chip>
     </mat-chip-list>
   </div>
 </mat-card>
